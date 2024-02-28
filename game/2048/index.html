@@ -218,23 +218,23 @@
         return true;
     }
 
-    document.addEventListener('keydown', function(event) {
+    function handleSwipe(direction) {
         if (!checkGameOver()) {
             let moved = false;
-            switch (event.key) {
-                case 'ArrowLeft':
+            switch (direction) {
+                case 'left':
                     moveLeft();
                     moved = true;
                     break;
-                case 'ArrowRight':
+                case 'right':
                     moveRight();
                     moved = true;
                     break;
-                case 'ArrowUp':
+                case 'up':
                     moveUp();
                     moved = true;
                     break;
-                case 'ArrowDown':
+                case 'down':
                     moveDown();
                     moved = true;
                     break;
@@ -245,6 +245,64 @@
                 if (checkGameOver()) {
                     alert('Game Over! Your Score: ' + score);
                 }
+            }
+        }
+    }
+
+    document.addEventListener('keydown', function(event) {
+        if (!checkGameOver()) {
+            let direction = '';
+            switch (event.key) {
+                case 'ArrowLeft':
+                    direction = 'left';
+                    break;
+                case 'ArrowRight':
+                    direction = 'right';
+                    break;
+                case 'ArrowUp':
+                    direction = 'up';
+                    break;
+                case 'ArrowDown':
+                    direction = 'down';
+                    break;
+            }
+            handleSwipe(direction);
+        }
+    });
+
+    // Touch event handling for swipe gestures
+    let touchStartX = 0;
+    let touchStartY = 0;
+    let touchEndX = 0;
+    let touchEndY = 0;
+
+    document.addEventListener('touchstart', function(event) {
+        touchStartX = event.touches[0].clientX;
+        touchStartY = event.touches[0].clientY;
+    });
+
+    document.addEventListener('touchmove', function(event) {
+        event.preventDefault();
+    });
+
+    document.addEventListener('touchend', function(event) {
+        touchEndX = event.changedTouches[0].clientX;
+        touchEndY = event.changedTouches[0].clientY;
+
+        let deltaX = touchEndX - touchStartX;
+        let deltaY = touchEndY - touchStartY;
+
+        if (Math.abs(deltaX) > Math.abs(deltaY)) {
+            if (deltaX > 0) {
+                handleSwipe('right');
+            } else {
+                handleSwipe('left');
+            }
+        } else {
+            if (deltaY > 0) {
+                handleSwipe('down');
+            } else {
+                handleSwipe('up');
             }
         }
     });
