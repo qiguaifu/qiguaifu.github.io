@@ -2,7 +2,7 @@
 <html lang="zh-CN">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <title>2048 游戏</title>
 <style>
     /* 样式 */
@@ -12,8 +12,7 @@
         align-items: center;
         height: 100vh;
         margin: 0;
-        width: 10vw;
-        height: 10vw;
+        overflow: hidden; /* 禁止页面滚动 */
     }
     .container {
         display: grid;
@@ -21,6 +20,7 @@
         grid-gap: 10px;
         padding: 10px;
         background-color: #bbada0;
+        touch-action: none; /* 禁止触摸事件的浏览器默认行为 */
     }
     .cell {
         width: 100px;
@@ -284,6 +284,7 @@
     }
 
     document.addEventListener('keydown', function(event) {
+        event.preventDefault(); // 阻止默认滚动行为
         if (!checkGameOver()) {
             let direction = '';
             switch (event.key) {
@@ -311,6 +312,7 @@
     let touchEndY = 0;
 
     document.addEventListener('touchstart', function(event) {
+        event.preventDefault(); // 阻止默认滚动行为
         touchStartX = event.touches[0].clientX;
         touchStartY = event.touches[0].clientY;
     });
@@ -320,6 +322,7 @@
     });
 
     document.addEventListener('touchend', function(event) {
+        event.preventDefault(); // 阻止默认滚动行为
         touchEndX = event.changedTouches[0].clientX;
         touchEndY = event.changedTouches[0].clientY;
 
