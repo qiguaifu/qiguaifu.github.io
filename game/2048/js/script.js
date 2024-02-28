@@ -164,6 +164,50 @@ function moveDown() {
     }
 }
 
+function canMoveLeft() {
+    for (let i = 0; i < 4; i++) {
+        for (let j = 1; j < 4; j++) {
+            if (grid[i][j] !== 0 && (grid[i][j - 1] === 0 || grid[i][j - 1] === grid[i][j])) {
+                return true;
+            }
+        }
+    }
+    return false;
+}
+
+function canMoveRight() {
+    for (let i = 0; i < 4; i++) {
+        for (let j = 2; j >= 0; j--) {
+            if (grid[i][j] !== 0 && (grid[i][j + 1] === 0 || grid[i][j + 1] === grid[i][j])) {
+                return true;
+            }
+        }
+    }
+    return false;
+}
+
+function canMoveUp() {
+    for (let j = 0; j < 4; j++) {
+        for (let i = 1; i < 4; i++) {
+            if (grid[i][j] !== 0 && (grid[i - 1][j] === 0 || grid[i - 1][j] === grid[i][j])) {
+                return true;
+            }
+        }
+    }
+    return false;
+}
+
+function canMoveDown() {
+    for (let j = 0; j < 4; j++) {
+        for (let i = 2; i >= 0; i--) {
+            if (grid[i][j] !== 0 && (grid[i + 1][j] === 0 || grid[i + 1][j] === grid[i][j])) {
+                return true;
+            }
+        }
+    }
+    return false;
+}
+
 function checkGameOver() {
     for (let i = 0; i < 4; i++) {
         for (let j = 0; j < 4; j++) {
@@ -186,20 +230,28 @@ function handleSwipe(direction) {
         let moved = false;
         switch (direction) {
             case 'left':
-                moveLeft();
-                moved = true;
+                if (canMoveLeft()) {
+                    moveLeft();
+                    moved = true;
+                }
                 break;
             case 'right':
-                moveRight();
-                moved = true;
+                if (canMoveRight()) {
+                    moveRight();
+                    moved = true;
+                }
                 break;
             case 'up':
-                moveUp();
-                moved = true;
+                if (canMoveUp()) {
+                    moveUp();
+                    moved = true;
+                }
                 break;
             case 'down':
-                moveDown();
-                moved = true;
+                if (canMoveDown()) {
+                    moveDown();
+                    moved = true;
+                }
                 break;
         }
         if (moved) {
