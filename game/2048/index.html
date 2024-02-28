@@ -284,7 +284,6 @@
     }
 
     document.addEventListener('keydown', function(event) {
-        event.preventDefault(); // 阻止默认滚动行为
         if (!checkGameOver()) {
             let direction = '';
             switch (event.key) {
@@ -302,6 +301,7 @@
                     break;
             }
             handleSwipe(direction);
+            event.preventDefault(); // 阻止默认滚动行为
         }
     });
 
@@ -312,9 +312,9 @@
     let touchEndY = 0;
 
     document.addEventListener('touchstart', function(event) {
-        event.preventDefault(); // 阻止默认滚动行为
         touchStartX = event.touches[0].clientX;
         touchStartY = event.touches[0].clientY;
+        event.preventDefault(); // 阻止默认滚动行为
     });
 
     document.addEventListener('touchmove', function(event) {
@@ -322,7 +322,6 @@
     });
 
     document.addEventListener('touchend', function(event) {
-        event.preventDefault(); // 阻止默认滚动行为
         touchEndX = event.changedTouches[0].clientX;
         touchEndY = event.changedTouches[0].clientY;
 
@@ -342,6 +341,7 @@
                 handleSwipe('up');
             }
         }
+        event.preventDefault(); // 阻止默认滚动行为
     });
 
     // 重新开始游戏按钮功能
