@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>2048 Game</title>
+<title>2048 游戏</title>
 <style>
     /* 样式 */
     body {
@@ -15,18 +15,18 @@
     }
     .container {
         display: grid;
-        grid-template-columns: repeat(4, 100px);
-        grid-gap: 10px;
-        padding: 10px;
+        grid-template-columns: repeat(4, 25vw);
+        grid-gap: 2vw;
+        padding: 2vw;
         background-color: #bbada0;
     }
     .cell {
-        width: 100px;
-        height: 100px;
+        width: 25vw;
+        height: 25vw;
         background-color: #cdc1b4;
-        font-size: 24px;
+        font-size: 6vw;
         text-align: center;
-        line-height: 100px;
+        line-height: 25vw;
     }
     #game-info {
         margin-top: 20px;
@@ -47,7 +47,8 @@
 <div id="game-container">
     <div class="container" id="grid-container"></div>
     <div id="game-info">
-        <p>Score: <span id="score">0</span></p>
+        <p>当前分数: <span id="current-score">0</span></p>
+        <p>历史最高分: <span id="highest-score">0</span></p>
         <button id="restart-btn">重置游戏</button>
     </div>
 </div>
@@ -55,7 +56,8 @@
     // JavaScript代码
     // 初始化游戏
     let grid = [];
-    let score = 0;
+    let currentScore = 0;
+    let highestScore = localStorage.getItem('highestScore') || 0;
 
     function initializeGrid() {
         for (let i = 0; i < 4; i++) {
@@ -93,7 +95,8 @@
                 container.appendChild(cell);
             }
         }
-        document.getElementById('score').textContent = score;
+        document.getElementById('current-score').textContent = currentScore;
+        document.getElementById('highest-score').textContent = highestScore;
     }
 
     function getCellColor(value) {
@@ -127,7 +130,11 @@
                     }
                     if (k >= 0 && grid[i][k] === grid[i][k + 1]) {
                         grid[i][k] *= 2;
-                        score += grid[i][k];
+                        currentScore += grid[i][k];
+                        if (currentScore > highestScore) {
+                            highestScore = currentScore;
+                            localStorage.setItem('highestScore', highestScore);
+                        }
                         grid[i][k + 1] = 0;
                     }
                 }
@@ -149,7 +156,11 @@
                     }
                     if (k < 4 && grid[i][k] === grid[i][k - 1]) {
                         grid[i][k] *= 2;
-                        score += grid[i][k];
+                        currentScore += grid[i][k];
+                        if (currentScore > highestScore) {
+                            highestScore = currentScore;
+                            localStorage.setItem('highestScore', highestScore);
+                        }
                         grid[i][k - 1] = 0;
                     }
                 }
@@ -171,7 +182,11 @@
                     }
                     if (k >= 0 && grid[k][j] === grid[k + 1][j]) {
                         grid[k][j] *= 2;
-                        score += grid[k][j];
+                        currentScore += grid[k][j];
+                        if (currentScore > highestScore) {
+                            highestScore = currentScore;
+                            localStorage.setItem('highestScore', highestScore);
+                        }
                         grid[k + 1][j] = 0;
                     }
                 }
@@ -193,7 +208,11 @@
                     }
                     if (k < 4 && grid[k][j] === grid[k - 1][j]) {
                         grid[k][j] *= 2;
-                        score += grid[k][j];
+                        currentScore += grid[k][j];
+                        if (currentScore > highestScore) {
+                            highestScore = currentScore;
+                            localStorage.setItem('highestScore', highestScore);
+                        }
                         grid[k - 1][j] = 0;
                     }
                 }
@@ -243,7 +262,7 @@
                 addNumber();
                 updateGrid();
                 if (checkGameOver()) {
-                    alert('Game Over! Your Score: ' + score);
+                    alert('游戏结束！您的分数：' + currentScore);
                 }
             }
         }
@@ -270,7 +289,7 @@
         }
     });
 
-    // Touch event handling for swipe gestures
+    // 触摸事件处理滑动手势
     let touchStartX = 0;
     let touchStartY = 0;
     let touchEndX = 0;
@@ -307,16 +326,16 @@
         }
     });
 
-    // Restart game button functionality
+    // 重新开始游戏按钮功能
     document.getElementById('restart-btn').addEventListener('click', function() {
-        score = 0;
+        currentScore = 0;
         initializeGrid();
         addNumber();
         addNumber();
         updateGrid();
     });
 
-    // Initialize game
+    // 初始化游戏
     initializeGrid();
     addNumber();
     addNumber();
