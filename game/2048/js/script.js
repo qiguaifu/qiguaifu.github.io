@@ -369,3 +369,12 @@ initializeGrid();
 addNumber();
 addNumber();
 updateGrid();
+
+var audio = document.getElementById("audio-control");
+// 监听音频播放结束事件
+audio.addEventListener("ended", function() {
+    // 将音频播放进度设置为0，以重新开始播放
+    this.currentTime = 0;
+    // 调用play()方法开始重新播放音频
+    this.play();
+});
