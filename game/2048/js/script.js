@@ -2,6 +2,17 @@
 let grid = [];
 let currentScore = 0;
 let highestScore = localStorage.getItem('highestScore') || 0;
+let savedGame = JSON.parse(localStorage.getItem('savedGame'));
+
+if (savedGame) {
+    grid = savedGame.grid;
+    currentScore = savedGame.currentScore;
+    highestScore = savedGame.highestScore;
+} else {
+    initializeGrid();
+    addNumber();
+    addNumber();
+}
 
 function initializeGrid() {
     for (let i = 0; i < 4; i++) {
@@ -26,6 +37,19 @@ function addNumber() {
         grid[spot.x][spot.y] = Math.random() < 0.9 ? 2 : 4;
     }
 }
+
+function saveGame() {
+    localStorage.setItem('savedGame', JSON.stringify({
+        grid: grid,
+        currentScore: currentScore,
+        highestScore: highestScore
+    }));
+}
+
+// 页面关闭时保存游戏状态
+window.addEventListener('beforeunload', function() {
+    saveGame();
+});
 
 function updateGrid() {
     let container = document.getElementById('grid-container');
