@@ -67,3 +67,26 @@ p {
 a {
     text-decoration: none;
 }
+
+.game-image {
+    width: 100px; /* 设置图片宽度为 300px */
+    height: auto; /* 让高度根据宽度自动调整，保持比例 */
+    margin-bottom: 20px; /* 设置图片下方的外边距为 20px，用于与按钮间隔 */
+}
+
+.start-button {
+    display: block; /* 将按钮显示为块级元素 */
+    width: 150px; /* 设置按钮宽度 */
+    padding: 10px; /* 设置按钮内边距 */
+    background-color: #007bff; /* 设置按钮背景颜色 */
+    color: #fff; /* 设置按钮文本颜色 */
+    text-align: center; /* 设置按钮文本居中 */
+    text-decoration: none; /* 去除按钮默认的下划线样式 */
+    border: none; /* 去除按钮的边框 */
+    border-radius: 5px; /* 设置按钮圆角 */
+}
+
+/* 将按钮置于图片下方 */
+.start-button-container {
+    text-align: center; /* 设置按钮容器内文本居中 */
+}
