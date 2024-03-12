@@ -4,26 +4,30 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <title>2048 游戏</title>
-<link rel="stylesheet" href="css/styles-desktop.css" media="screen and (min-width: 769px)">
-<link rel="stylesheet" href="css/styles-mobile.css" media="screen and (max-width: 768px)">
+<link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-<div id="game-container">
-    <div class="container" id="grid-container"></div>
-    <div id="game-info">
-        <p>当前分数: <span id="current-score">0</span></p>
-        <p>历史最高分: <span id="highest-score">0</span></p>
-        <a href="https://www.liangwangan.top/" class="nav-btn">淘气包Blog</a>
-        <button id="restart-btn">重置游戏</button>
-        <a href="https://www.liangwangan.top/game" class="nav-btn">返回上一级</a>
+    <div id="loading-screen" class="loading-screen">
+        <div class="loading">
+            <span>Loading...</span>
+        </div>
     </div>
-</div>
-<audio id="audio-control" controls height="100" width="100">
-    <source src="background.mp3" type="audio/mpeg">
-    <source src="background.ogg" type="audio/ogg">
-    <embed height="50" width="100" src="background.mp3">
-</audio>
-<script src="js/script.js"></script>
+    <div id="game-container" style="display:none;">
+        <div class="container" id="grid-container"></div>
+        <div id="game-info">
+            <p>当前分数: <span id="current-score">0</span></p>
+            <p>历史最高分: <span id="highest-score">0</span></p>
+            <a href="https://www.liangwangan.top/" class="nav-btn">淘气包Blog</a>
+            <button id="restart-btn">重置游戏</button>
+            <a href="https://www.liangwangan.top/game" class="nav-btn">返回上一级</a>
+        </div>
+    </div>
+    <audio id="audio-control" controls height="100" width="100" style="display:none;">
+        <source src="background.mp3" type="audio/mpeg">
+        <source src="background.ogg" type="audio/ogg">
+        <embed height="50" width="100" src="background.mp3">
+    </audio>
+    <script src="js/script.js"></script>
 </body>
 <footer>
     <div class="footer-content">

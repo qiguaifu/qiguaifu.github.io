@@ -386,3 +386,9 @@ audio.addEventListener("ended", function() {
     // 调用play()方法开始重新播放音频
     this.play();
 });
+
+setTimeout(function(){
+    document.getElementById("loading-screen").style.display = "none"; 
+    document.getElementById("game-container").style.display = "block"; 
+    document.getElementById("audio-control").style.display = "block";
+}, 3000);
