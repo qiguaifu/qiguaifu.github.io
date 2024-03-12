@@ -14,6 +14,14 @@ if (savedGame) {
     addNumber();
 }
 
+// 设置当前分数为0并更新游戏面板
+currentScore = 0;
+updateGrid();
+
+// 更新分数显示
+document.getElementById('current-score').textContent = currentScore;
+document.getElementById('highest-score').textContent = highestScore;
+
 function initializeGrid() {
     for (let i = 0; i < 4; i++) {
         grid[i] = [];
