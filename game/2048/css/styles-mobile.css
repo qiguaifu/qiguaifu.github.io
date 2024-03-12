@@ -1,0 +1,92 @@
+body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* 禁止水平滚动 */
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+    z-index: 999; /* 使其位于最顶层 */
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); /* 自适应列数 */
+    grid-gap: 10px;
+    padding: 10px;
+    background-color: #bbada0;
+    touch-action: none;
+    margin-top: 110px; /* 向下移动 50px */
+}
+
+
+.cell {
+    width: 100px;
+    height: 100px;
+    background-color: #cdc1b4;
+    font-size: 24px;
+    text-align: center;
+    line-height: 100px;
+}
+
+#game-info {
+    margin-top: 20px;
+    text-align: center;
+}
+
+#naughty-blog-btn {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    z-index: 999; /* 使其位于最顶层 */
+}
+
+#audio-control {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    z-index: 999; /* 使其位于最顶层 */
+}
+
+@media (max-width: 768px) {
+    .container {
+        grid-template-columns: repeat(auto-fit, minmax(20vw, 1fr)); /* 自适应列数 */
+    }
+    .cell {
+        width: 20vw;
+        height: 20vw;
+        font-size: 5vw;
+        line-height: 20vw;
+    }
+    #restart-btn, .nav-btn {
+        padding: 10px 20px;
+        font-size: 16px;
+        background-color: #8f7a66;
+        color: white;
+        border: none;
+        cursor: pointer;
+        border-radius: 5px;
+        margin-top: 10px;
+        display: inline-block;
+        text-decoration: none;
+    }
+}
+
+@media (max-width: 480px) {
+    footer {
+        padding: 10px 0; /* 调整页脚的内边距 */
+    }
+
+    .icp a {
+        font-size: 12px; /* 调整备案信息的字体大小 */
+        color: #fff;
+    }
+}
+

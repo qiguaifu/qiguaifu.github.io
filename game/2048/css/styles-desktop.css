@@ -1,11 +1,20 @@
-/* 样式 */
 body {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
     margin: 0;
-    overflow: hidden; /* 禁止页面滚动 */
+    overflow: hidden; 
+}
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
 }
 .container {
     display: grid;
@@ -13,7 +22,7 @@ body {
     grid-gap: 10px;
     padding: 10px;
     background-color: #bbada0;
-    touch-action: none; /* 禁止触摸事件的浏览器默认行为 */
+    touch-action: none; 
 }
 .cell {
     width: 100px;
@@ -46,7 +55,6 @@ body {
     right: 10px;
 }
 
-/* 媒体查询 */
 @media (max-width: 768px) {
     .container {
         grid-template-columns: repeat(4, 1fr);
@@ -61,7 +69,11 @@ body {
 
 #audio-control {
     position: fixed;
-    bottom: 10px;
+    bottom: 85px;
     right: 10px;
     z-index: 9999;
+}
+
+.icp a {
+    color: #ffffff;
 }
