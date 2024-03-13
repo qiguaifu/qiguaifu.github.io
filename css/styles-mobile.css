@@ -9,6 +9,18 @@ footer {
     text-align: center;
     z-index: 999;
 }
+h1 {
+    font-size: 36px;
+  }
+p {
+    font-size: 18px;
+    margin-top: 20px;
+  }
 .icp a {
     color: #ffffff;
+    text-decoration: none;
+}
+.me a {
+    color: #ffffff;
+    text-decoration: none;
 }

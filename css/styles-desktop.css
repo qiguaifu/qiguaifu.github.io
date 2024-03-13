@@ -8,6 +8,18 @@ footer {
     padding: 20px 0;
     text-align: center;
 }
+h1 {
+    font-size: 36px;
+  }
+p {
+    font-size: 18px;
+    margin-top: 20px;
+  }
 .icp a {
     color: #ffffff;
+    text-decoration: none;
+}
+.me a {
+    color: #ffffff;
+    text-decoration: none;
 }
