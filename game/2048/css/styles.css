@@ -18,7 +18,7 @@ footer {
     width: 100%;
     background-color: rgba(0, 0, 0, 0.7);
     color: #fff;
-    padding: 20px 0;
+    padding: 15px 0;
     text-align: center;
 }
 .container {
@@ -40,7 +40,7 @@ footer {
 #game-info {
     margin-top: 20px;
     text-align: center;
-    color: #fff;
+    color: #ffffff;
 }
 #restart-btn, .nav-btn {
     padding: 10px 20px;
@@ -81,16 +81,21 @@ footer {
 
 #audio-control {
     position: fixed;
-    bottom: 85px;
+    bottom: 100px;
     right: 10px;
     z-index: 9999;
 }
 
 .icp a {
     color: #ffffff;
+    text-decoration: none;
+}
+.me a {
+    color: #ffffff;
+    text-decoration: none;
 }
 
-  .loading{
+.loading{
     width: 200px;
     height: 200px;
     box-sizing: border-box;
@@ -98,9 +103,9 @@ footer {
     border-top: 10px solid #e74c3c;
     position: relative;
     animation: a1 2s linear infinite;
-  }
+}
   
-  .loading::before,.loading::after{
+.loading::before,.loading::after{
     content: '';
     width: 200px;
     height: 200px;
@@ -109,19 +114,19 @@ footer {
     top: -10px;
     box-sizing: border-box;
     border-radius: 50%;
-  }
+}
   
-  .loading::before{
+.loading::before{
     border-top: 10px solid #e67e22;
     transform: rotate(120deg);
-  }
+}
   
-  .loading::after{
+.loading::after{
     border-top: 10px solid #3498db;
     transform: rotate(240deg);
-  }
+}
   
-  .loading span{
+.loading span{
     position: absolute;
     width: 200px;
     height: 200px;
@@ -129,16 +134,16 @@ footer {
     text-align: center;
     line-height: 200px;
     animation: a2 2s linear infinite;
-  }
+}
   
-  @keyframes a1 {
+@keyframes a1 {
     to{
       transform: rotate(360deg);
     }
   }
   
-  @keyframes a2 {
+@keyframes a2 {
     to{
       transform: rotate(-360deg);
     }
-  }
+}
