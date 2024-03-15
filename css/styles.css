@@ -1,0 +1,234 @@
+/* styles.css */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    position: relative;
+    min-height: 100%;
+    background: #eee;
+    color: #4c4948;
+    font-size: 14px;
+    font-family: Lato, Helvetica Neue, Helvetica, Arial, sans-serif;
+    line-height: 2;
+    margin: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 1rem 0 .7rem;
+    color: #344c67;
+    font-weight: 700;
+}
+
+hr:before {
+    position: absolute;
+    top: -10px;
+    left: 5%;
+    color: #49b1f5;
+    content: '\f0c4';
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: 20px;
+    transition: all 1s ease-in-out;
+}
+
+hr {
+    margin: 2rem auto;
+    width: calc(100% - 4px);
+    border: 2px dashed #a4d8fa;
+    background: #fff;
+}
+
+body, li, span, p {
+    cursor: url(https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/cursor/texto.cur), auto;
+}
+
+a {
+    background-color: transparent;
+    cursor: url(https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/cursor/ayuda.cur), auto;
+}
+
+strong {
+    color: #FF0066;
+}
+
+#body-wrap {
+    display: flex;
+    flex-direction: column;
+}
+
+#nav.not_index_bg {
+    height: 20rem;
+    width: 100%;
+    background-color: #49b1f5;
+    background-attachment: local;
+    background-position: center;
+    background-size: cover;
+}
+
+#site-title {
+    color: #fff;
+    font-size: 1rem;
+    text-shadow: 0.1rem 0.1rem 0.2rem rgba(0, 0, 0, .15);
+    margin: 0 auto;
+    width: 100%;
+    padding: 20px 80px;
+    text-align: center;
+    background-color: #49b1f5;
+}
+
+main {
+    display: block;
+}
+
+#content-outer {
+    flex: 1 auto;
+}
+
+.layout_page {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start; /* 添加此行 */
+    margin: 0 auto;
+    padding: 0 5px;
+    max-width: 1400px;
+}
+
+#page {
+    margin-top: 10px;
+    width: calc(75% - 20px); /* 调整宽度，考虑到 padding */
+    border-radius: 3px;
+    background: #fff;
+    box-shadow: 0 4px 8px 6px rgba(7, 17, 27, .06);
+    transition: all .3s;
+    padding: 20px 24px 44px; /* 调整 padding */
+}
+
+#aside_content {
+    width: calc(25% - 20px); /* 设置原来的宽度为 25% */
+    margin-right: 20px; /* 添加右外边距 */
+    margin-left: 0; /* 取消左外边距 */
+    overflow: hidden;
+    border-radius: 3px;
+    background: #fff;
+    box-shadow: 0 4px 8px 6px rgba(7, 17, 27, .06);
+    transition: all .3s;
+}
+
+.card-content {
+    padding: 1rem 1.2rem;
+}
+
+.is-center {
+    text-align: center;
+}
+
+.avatar-img {
+    animation: avatar_turn_around 2s linear infinite;
+}
+
+.author-info__name {
+    font-weight: 500;
+    font-size: 1.1rem;
+}
+
+.author-info__description {
+    margin-top: -.3rem;
+}
+
+.card-info-social-icons {
+    margin: .3rem 0 -.3rem;
+}
+
+.social-icon {
+    margin: 0 .5rem;
+    color: #4c4948;
+    font-size: 1.5rem;
+}
+
+footer {
+    width: 100%;
+    background-color: rgba(35, 30, 30, 0.7);
+    color: #fff;
+    padding: 15px 0;
+    text-align: center;
+}
+
+.icp a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+#footer-wrap {
+    padding: 2rem 1rem;
+    text-align: center;
+}
+
+#footer,
+.layout_page,
+.layout_post {
+    animation: main 1s;
+}
+
+@media screen and (min-width: 768px) {
+    #site-title {
+        font-size: 2rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .layout_page {
+        padding: 0 5px !important;
+    }
+    #page {
+        margin: 0;
+        padding: 1.8rem 1.3rem;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    #page {
+        width: 100% !important;
+    }
+    #aside_content {
+        width: 100% !important;
+    }
+    .layout_page {
+        flex-direction: column;
+    }
+}
+
+@media screen and (min-width: 900px) {
+    #aside_content .card-widget {
+        width: 100%;
+        margin-right: 15px;
+    }
+}
+
+@media screen and (max-width: 1400px) {
+    .layout_page {
+        max-width: 90%;
+    }
+}
+
+::-webkit-scrollbar {
+    width: 2px;
+    height: 2px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(to right, #FF0066 0%, #FF00CC 100%);
+    width: 85%;
+}
+
+::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+.fa-github:before {
+    content: "\f09b";
+}
