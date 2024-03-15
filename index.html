@@ -56,6 +56,22 @@
                     <div class="card-widget card-announcement">
                         <div class="card-content">
                             <div class="item-headline">
+                                <i class="fa fa-calendar" aria-hidden="true"></i>
+                                <span id="current-time"></span>
+                            </div>
+                            <div id="hitokoto"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>   
+
+        <div class="card-widget">
+            <div class="card-content">
+                <div class="aside_content" id="aside_content">
+                    <div class="card-widget card-announcement">
+                        <div class="card-content">
+                            <div class="item-headline">
                                 <i class="fa fa-bullhorn" aria-hidden="true"></i>
                                 目前仅开放2048 游戏，更多的功能正在开发中！
                             </div>
@@ -64,7 +80,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div>     
 
         <article id="page">
             <div class="article-container">
@@ -90,9 +106,8 @@
                 </div>
             </div>
         </article>
-
-
     </div>
+
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
     <script>
         $(function () {
@@ -103,6 +118,7 @@
             });
         });
     </script>
+
     <footer>
         <div class="footer-content">
             <div class="copyright">
@@ -113,7 +129,7 @@
             </div>
         </div>
     </footer>
-    <script src="https://cdn.jsdelivr.net/gh/TRHX/CDN-for-itrhx.com@3.0.8/js/maodian.js"></script>
+
     <script>
         (function ($) {
             $.fn.snow = function (options) {
@@ -149,6 +165,15 @@
                 }, options.newOn);
             };
         })(jQuery);
+
+    function updateCurrentTime() {
+        var now = new Date();
+        var dayOfWeek = ["星期日", "星期一", "星期二", "星期三", "星期四", "星期五", "星期六"];
+        var formattedTime = now.getFullYear() + '/' + (now.getMonth() + 1) + '/' + now.getDate() + ' ' + dayOfWeek[now.getDay()] + ' ' + now.toLocaleTimeString();
+        document.getElementById('current-time').textContent = formattedTime;
+    }
+    updateCurrentTime();
+    setInterval(updateCurrentTime, 1000);
     </script>
 </body>
 

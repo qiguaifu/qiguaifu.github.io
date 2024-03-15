@@ -1,23 +1,39 @@
-/* 重置 */
+/* Add your custom styles here */
+
 * {
     box-sizing: border-box;
-    margin: 0;
-    padding: 0;
 }
 
-/* 全局样式 */
-html, body {
+html {
     height: 100%;
+}
+
+body {
+    position: relative;
+    min-height: 100%;
+    background: #eee;
+    color: #4c4948;
     font-size: 14px;
     font-family: Lato, Helvetica Neue, Helvetica, Arial, sans-serif;
     line-height: 2;
-    color: #4c4948;
+    margin: 0;
 }
 
 h1, h2, h3, h4, h5, h6 {
     margin: 1rem 0 .7rem;
     color: #344c67;
     font-weight: 700;
+}
+
+hr:before {
+    position: absolute;
+    top: -10px;
+    left: 5%;
+    color: #49b1f5;
+    content: '\f0c4';
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: 20px;
+    transition: all 1s ease-in-out;
 }
 
 hr {
@@ -27,10 +43,31 @@ hr {
     background: #fff;
 }
 
-/* 自定义样式 */
+body, li, span, p {
+    cursor: url(https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/cursor/texto.cur), auto;
+}
+
+a {
+    background-color: transparent;
+    cursor: url(https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/cursor/ayuda.cur), auto;
+}
+
+strong {
+    color: #FF0066;
+}
+
 #body-wrap {
     display: flex;
     flex-direction: column;
+}
+
+#nav.not_index_bg {
+    height: 20rem;
+    width: 100%;
+    background-color: #49b1f5;
+    background-attachment: local;
+    background-position: center;
+    background-size: cover;
 }
 
 #site-title {
@@ -44,8 +81,21 @@ hr {
     background-color: #49b1f5;
 }
 
-.main {
+main {
     display: block;
+}
+
+#content-outer {
+    flex: 1 auto;
+}
+
+.layout_page {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start; /* 添加此行 */
+    margin: 0 auto;
+    padding: 0 5px;
+    max-width: 1400px;
 }
 
 #page {
@@ -122,16 +172,6 @@ footer {
 .layout_page,
 .layout_post {
     animation: main 1s;
-}
-
-/* 鼠标样式 */
-body, li, span, p {
-    cursor: url(https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/cursor/texto.cur),auto;
-}
-
-a {
-    background-color: transparent;
-    cursor: url(https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/cursor/ayuda.cur),auto;
 }
 
 @media screen and (min-width: 768px) {
