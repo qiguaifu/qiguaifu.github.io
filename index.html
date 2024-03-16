@@ -34,7 +34,7 @@
                         <div class="card-content">
                             <div class="card-info-avatar is-center">
                                 <img class="avatar-img"
-                                    src="https://cdn.jsdelivr.net/gh/laoxuai/assert/images/20200125221102.png"
+                                    src="image/p1.png"
                                     alt="avatar">
                                 <div class="author-info__name">爱数数的淘气包</div>
                                 <div class="author-info__description">00后青年，喜欢探索网络上的科技奥秘！</div>
@@ -109,18 +109,6 @@
                 </article>
             </div>
         </main>
-
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
-    <script>
-        $(function () {
-            $.fn.snow({
-                minSize: 5, /* 定义雪花最小尺寸 */
-                maxSize: 50,/* 定义雪花最大尺寸 */
-                newOn: 800  /* 定义密集程度，数字越小越密集 */
-            });
-        });
-    </script>
-
     <footer>
         <div class="footer-content">
             <div class="copyright">
@@ -131,53 +119,9 @@
             </div>
         </div>
     </footer>
-    
     <script src="https://cdn.jsdelivr.net/gh/TRHX/CDN-for-itrhx.com@3.0.8/js/maodian.js"></script>
-    <script>
-        (function ($) {
-            $.fn.snow = function (options) {
-                var $flake = $('<div id="snowbox" />').css({ 'position': 'absolute', 'z-index': '9999', 'top': '-50px' }).html('&#10052;'),
-                    documentHeight = $(document).height(),
-                    documentWidth = $(document).width(),
-                    defaults = {
-                        minSize: 10,
-                        maxSize: 20,
-                        newOn: 1000,
-                        flakeColor: "#AFDAEF" /* 此处可以定义雪花颜色，若要白色可以改为#FFFFFF */
-                    },
-                    options = $.extend({}, defaults, options);
-                var interval = setInterval(function () {
-                    var startPositionLeft = Math.random() * documentWidth - 100,
-                        startOpacity = 0.5 + Math.random(),
-                        sizeFlake = options.minSize + Math.random() * options.maxSize,
-                        endPositionTop = documentHeight - 200,
-                        endPositionLeft = startPositionLeft - 500 + Math.random() * 500,
-                        durationFall = documentHeight * 10 + Math.random() * 5000;
-                    $flake.clone().appendTo('body').css({
-                        left: startPositionLeft,
-                        opacity: startOpacity,
-                        'font-size': sizeFlake,
-                        color: options.flakeColor
-                    }).animate({
-                        top: endPositionTop,
-                        left: endPositionLeft,
-                        opacity: 0.2
-                    }, durationFall, 'linear', function () {
-                        $(this).remove()
-                    });
-                }, options.newOn);
-            };
-        })(jQuery);
-
-    function updateCurrentTime() {
-        var now = new Date();
-        var dayOfWeek = ["星期日", "星期一", "星期二", "星期三", "星期四", "星期五", "星期六"];
-        var formattedTime = now.getFullYear() + '/' + (now.getMonth() + 1) + '/' + now.getDate() + ' ' + dayOfWeek[now.getDay()] + ' ' + now.toLocaleTimeString();
-        document.getElementById('current-time').textContent = formattedTime;
-    }
-    updateCurrentTime();
-    setInterval(updateCurrentTime, 1000);
-    </script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+    <script src="js/script.js"></script>
 </body>
 
 </html>

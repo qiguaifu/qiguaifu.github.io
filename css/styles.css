@@ -87,6 +87,11 @@ strong {
     background-color: #49b1f5;
 }
 
+.avatar-img {
+    width: 100px;
+    height: auto;
+}
+
 main {
     display: block;
 }
