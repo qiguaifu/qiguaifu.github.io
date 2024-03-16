@@ -1,5 +1,3 @@
-/* Add your custom styles here */
-
 * {
     box-sizing: border-box;
 }
@@ -29,6 +27,7 @@ hr:before {
     position: absolute;
     top: -10px;
     left: 5%;
+    z-index: 1;
     color: #49b1f5;
     content: '\f0c4';
     font: normal normal normal 14px/1 FontAwesome;
@@ -37,10 +36,17 @@ hr:before {
 }
 
 hr {
+    position: relative;
     margin: 2rem auto;
     width: calc(100% - 4px);
     border: 2px dashed #a4d8fa;
     background: #fff;
+}
+
+hr {
+    box-sizing: content-box;
+    height: 0;
+    overflow: visible;
 }
 
 body, li, span, p {
@@ -92,7 +98,6 @@ main {
 .layout_page {
     display: flex;
     align-items: flex-start;
-    justify-content: flex-start; /* 添加此行 */
     margin: 0 auto;
     padding: 0 5px;
     max-width: 1400px;
@@ -100,23 +105,29 @@ main {
 
 #page {
     margin-top: 10px;
-    width: calc(75% - 20px); /* 调整宽度，考虑到 padding */
+    width: 75%; /* Adjusted width */
     border-radius: 3px;
     background: #fff;
     box-shadow: 0 4px 8px 6px rgba(7, 17, 27, .06);
     transition: all .3s;
-    padding: 20px 24px 44px; /* 调整 padding */
+    padding: 20px 44px 44px;
 }
 
 #aside_content {
-    width: calc(25% - 20px); /* 设置原来的宽度为 25% */
-    margin-right: 20px; /* 添加右外边距 */
-    margin-left: 0; /* 取消左外边距 */
+    width: 25%;
+}
+
+#aside_content .card-widget {
     overflow: hidden;
+    margin: 10px 0;
     border-radius: 3px;
     background: #fff;
     box-shadow: 0 4px 8px 6px rgba(7, 17, 27, .06);
     transition: all .3s;
+}
+
+#aside_content .card-content {
+    padding: 1rem 1.2rem;
 }
 
 .card-content {
@@ -174,13 +185,13 @@ footer {
     animation: main 1s;
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 768px){
     #site-title {
         font-size: 2rem;
     }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 768px){
     .layout_page {
         padding: 0 5px !important;
     }
@@ -190,11 +201,11 @@ footer {
     }
 }
 
-@media screen and (max-width: 900px) {
-    #page {
+@media screen and (max-width: 900px){
+    #page{
         width: 100% !important;
     }
-    #aside_content {
+    #aside_content{
         width: 100% !important;
     }
     .layout_page {
@@ -202,16 +213,9 @@ footer {
     }
 }
 
-@media screen and (min-width: 900px) {
+@media screen and (min-width: 900px){
     #aside_content .card-widget {
-        width: 100%;
         margin-right: 15px;
-    }
-}
-
-@media screen and (max-width: 1400px) {
-    .layout_page {
-        max-width: 90%;
     }
 }
 

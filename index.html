@@ -27,8 +27,8 @@
                 </script>
             </div>
         </div>
-        <div class="card-widget">
-            <div class="card-content">
+        <main id="content-outer">
+            <div class="layout_page" id="content-inner">
                 <div class="aside_content" id="aside_content">
                     <div class="card-widget card-info">
                         <div class="card-content">
@@ -46,13 +46,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
-        </div>
 
-        <div class="card-widget">
-            <div class="card-content">
-                <div class="aside_content" id="aside_content">
                     <div class="card-widget card-announcement">
                         <div class="card-content">
                             <div class="item-headline">
@@ -62,51 +56,59 @@
                             <div id="hitokoto"></div>
                         </div>
                     </div>
-                </div>
-            </div>
-        </div>   
 
-        <div class="card-widget">
-            <div class="card-content">
-                <div class="aside_content" id="aside_content">
                     <div class="card-widget card-announcement">
                         <div class="card-content">
                             <div class="item-headline">
                                 <i class="fa fa-bullhorn" aria-hidden="true"></i>
-                                目前仅开放2048 游戏，更多的功能正在开发中！
+                                <span>目前仅开放2048 游戏，更多的功能正在开发中！</span>
                             </div>
                             <div id="hitokoto"></div>
                         </div>
                     </div>
+
+                    <div class="card-widget card-webinfo">
+                        <div class="card-content">
+                            <div class="item-headline">
+                                <i class="fa fa-line-chart" aria-hidden="true"></i>
+                                <span>站点信息</span>
+                            </div>
+                            <div class="webinfo">
+                                <div class="webinfo-item">
+                                    <div class="webinfo-site-uv-name">本站访客数 :</div>
+                                    <div class="webinfo-site-uv-count" id="busuanzi_value_site_uv"></div>
+                                </div>
+                                <div class="webinfo-item">
+                                    <div class="webinfo-site-name">本站总访问量 :</div>
+                                    <div class="webinfo-site-pv-count" id="busuanzi_value_site_pv"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
+                <article id="page">
+                    <div class="article-container">
+                            <h2>小游戏</h2>
+                            <a href="https://www.liangwangan.top/game/2048">2048 游戏</a>
+                            <hr>
+            
+                            <h2>敬请期待</h2>
+                            <div class="skillbox">
+                            </div>
+            
+                            <hr>
+                            <h2>敬请期待</h2>
+                            <div class="tool">
+                            </div>
+            
+                            <hr>
+                            <h2>敬请期待</h2>
+                            <div class="tool">
+                            </div>
+                        </div>
+                </article>
             </div>
-        </div>     
-
-        <article id="page">
-            <div class="article-container">
-                <h2>小游戏</h2>
-                <a href="https://www.liangwangan.top/game/2048">2048 游戏</a>
-                <hr>
-
-                <h2>敬请期待</h2>
-                <div class="skillbox">
-                    <!-- 技能条目 -->
-                </div>
-
-                <hr>
-                <h2>敬请期待</h2>
-                <div class="tool">
-                    <!-- 刷题链接 -->
-                </div>
-
-                <hr>
-                <h2>敬请期待</h2>
-                <div class="tool">
-                    <!-- 收藏链接 -->
-                </div>
-            </div>
-        </article>
-    </div>
+        </main>
 
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
     <script>
