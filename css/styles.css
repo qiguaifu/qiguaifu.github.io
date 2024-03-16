@@ -164,6 +164,13 @@ main {
     margin: 0 .5rem;
     color: #4c4948;
     font-size: 1.5rem;
+    text-decoration: none;
+}
+
+.social-icon img {
+    width: 24px; /* 设置图片宽度 */
+    height: 24px; /* 设置图片高度 */
+    vertical-align: middle; /* 使用垂直居中 */
 }
 
 footer {

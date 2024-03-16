@@ -49,3 +49,16 @@ $(function () {
         newOn: 800 
     });
 });
+
+document.addEventListener("DOMContentLoaded", function() {
+    var isWechatBrowser = /micromessenger/i.test(navigator.userAgent.toLowerCase());
+    var wechatLink = document.getElementById("wechat-link");
+
+    if (isWechatBrowser) {
+        // 如果是微信内置浏览器，则设置跳转到微信公众号主页的链接
+        wechatLink.href = "https://mp.weixin.qq.com/mp/profile_ext?action=home&__biz=MzkzMzY1NDU2MQ==&scene=124#wechat_redirect";
+    } else {
+        // 如果不是微信内置浏览器，则设置直接打开图片的链接
+        wechatLink.href = "image/blog.png";
+    }
+});
