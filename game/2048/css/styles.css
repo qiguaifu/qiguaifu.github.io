@@ -90,55 +90,94 @@ footer {
     color: #ffffff;
     text-decoration: none;
 }
-.loading{
-    width: 200px;
-    height: 200px;
-    box-sizing: border-box;
-    border-radius: 50%;
-    border-top: 10px solid #e74c3c;
-    position: relative;
-    animation: a1 2s linear infinite;
+.loader {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	-webkit-transform: translate(-50%, -50%);
+	-moz-transform: translate(-50%, -50%);
+	-mos-transform: translate(-50%, -50%);
+	-o-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+	text-align:center;
+/* disable selection and cursor changes */
+	-webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    cursor:default;
 }
-  
-.loading::before,.loading::after{
-    content: '';
-    width: 200px;
-    height: 200px;
-    position: absolute;
-    left: 0;
-    top: -10px;
-    box-sizing: border-box;
-    border-radius: 50%;
+
+/* Text align it the center of screen and connect the looped animation for 2 seconds */
+.text{
+	position: absolute;
+	left: -1.3em;
+	top: -1.7em;
+	-webkit-animation: text 2s infinite;
+	-moz-animation: text 2s infinite;
+	-moz-animation: text 2s infinite;
+	-ms-animation: text 2s infinite;
+	-o-animation: text 2s infinite;
+	animation: text 2s infinite;
 }
-  
-.loading::before{
-    border-top: 10px solid #e67e22;
-    transform: rotate(120deg);
+
+/* Set for the first layer vertical position */
+.vertical{
+	position:absolute;
+	top: -1.84em;
+	left: -0.4em;
+	-webkit-transform: rotate(90deg);
+	-moz-transform: rotate(90deg);
+	-ms-transform: rotate(90deg);
+	-o-transform: rotate(90deg);
+	transform: rotate(90deg);
 }
-  
-.loading::after{
-    border-top: 10px solid #3498db;
-    transform: rotate(240deg);
+
+/* Set for the second layer horizontal position */
+.horizontal{
+	position:absolute;
+	top:0em;
+	left:0em;
+	-webkit-transform: rotate(0deg);
+	-moz-transform: rotate(0deg);
+	-ms-transform: rotate(0deg);
+	-o-transform: rotate(0deg);
+	transform: rotate(0deg);
 }
-  
-.loading span{
-    position: absolute;
-    width: 200px;
-    height: 200px;
-    color: #fff;
-    text-align: center;
-    line-height: 200px;
-    animation: a2 2s linear infinite;
+
+/* The next two classes do mirror for animation */
+.circlesup{
+	position:absolute;
+	top: -4.7em;
+	right: 12.1em;
 }
-  
-@keyframes a1 {
-    to{
-      transform: rotate(360deg);
-    }
-  }
-  
-@keyframes a2 {
-    to{
-      transform: rotate(-360deg);
-    }
+
+.circlesdwn{
+	position:absolute;
+	top:2.5em;
+	right:-13.5em;
+	-webkit-transform: rotate(180deg);
+	-moz-transform: rotate(180deg);
+	-ms-transform: rotate(180deg);
+	-o-transform: rotate(180deg);
+	transform: rotate(180deg);
 }
+.circle {
+	position: absolute;
+	width: 15em;
+	height: 15em;
+	-webkit-transform: rotate(45deg);
+	-moz-transform: rotate(45deg);
+	-ms-transform: rotate(45deg);
+	-o-transform: rotate(45deg);
+	transform: rotate(45deg);
+	-webkit-animation: orbit 2s infinite;
+	-moz-animation: orbit 2s infinite;
+	-moz-animation: orbit 2s infinite;
+	-ms-animation: orbit 2s infinite;
+	-o-animation: orbit 2s infinite;
+	animation: orbit 2s infinite;
+	z-index:5;
+} 

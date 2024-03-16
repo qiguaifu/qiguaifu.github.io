@@ -5,13 +5,46 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <title>2048 游戏</title>
 <link rel="stylesheet" href="css/styles.css">
+<link rel="stylesheet" href="css/loader.css">
 </head>
 <body>
-    <div id="loading-screen" class="loading-screen">
-        <div class="loading">
-            <span>Loading...</span>
+    <div id="loading-screen">
+        <div class="loader">
+            <div class="text">Loading...</div>
+            <div class="horizontal">
+                <div class="circlesup">
+                    <div class="circle"></div>
+                    <div class="circle"></div>
+                    <div class="circle"></div>
+                    <div class="circle"></div>
+                    <div class="circle"></div>
+                </div>
+                <div class="circlesdwn">
+                    <div class="circle"></div>
+                    <div class="circle"></div>
+                    <div class="circle"></div>
+                    <div class="circle"></div>
+                    <div class="circle"></div>
+                </div>
+            </div>
+            <div class="vertical">
+                <div class="circlesup">
+                    <div class="circle"></div>
+                    <div class="circle"></div>
+                    <div class="circle"></div>
+                    <div class="circle"></div>
+                    <div class="circle"></div>
+                </div>
+                <div class="circlesdwn">
+                    <div class="circle"></div>
+                    <div class="circle"></div>
+                    <div class="circle"></div>
+                    <div class="circle"></div>
+                    <div class="circle"></div>
+                </div>
+            </div>
         </div>
-    </div>
+    </div>    
     <div id="game-container" style="display:none;">
         <div class="container" id="grid-container"></div>
         <div id="game-info">
