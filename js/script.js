@@ -53,10 +53,33 @@ $(function () {
 document.addEventListener("DOMContentLoaded", function() {
     var isWechatBrowser = /micromessenger/i.test(navigator.userAgent.toLowerCase());
     var wechatLink = document.getElementById("wechat-link");
+    var imagePopup = document.getElementById("image-popup");
+    var popupImage = document.getElementById("popup-image");
+    var closePopup = document.getElementById("close-popup");
+    var hrElements = document.querySelectorAll("hr");
 
     if (isWechatBrowser) {
         wechatLink.href = "https://mp.weixin.qq.com/mp/profile_ext?action=home&__biz=MzkzMzY1NDU2MQ==&scene=124#wechat_redirect";
     } else {
-        wechatLink.href = "image/blog.png";
+        wechatLink.addEventListener("click", function(event) {
+            event.preventDefault();
+            imagePopup.style.display = "block";
+            popupImage.src = "image/blog.png";
+
+            // 将所有的 <hr> 标签的 z-index 设置为较低的值
+            hrElements.forEach(function(hr) {
+                hr.style.zIndex = "-1";
+            });
+        });
+
+        closePopup.addEventListener("click", function() {
+            imagePopup.style.display = "none";
+
+            // 将所有的 <hr> 标签的 z-index 设置为默认值
+            hrElements.forEach(function(hr) {
+                hr.style.zIndex = "1";
+            });
+        });
     }
 });
+
