@@ -8,6 +8,7 @@
     <link rel="shortcut icon" type="image/x-icon" href="../image/p1.png">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css">
+    <button id="back-to-top-btn"><i class="fa fa-home"></i> 主页</button>
 </head>
 
 <body>
@@ -114,6 +115,10 @@
     <script src="https://cdn.jsdelivr.net/gh/TRHX/CDN-for-itrhx.com@3.0.8/js/maodian.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
     <script src="../js/script.js"></script>
+    <script>document.getElementById("back-to-top-btn").addEventListener("click", function() {
+        window.location.href = "../index.html";
+    });
+    </script>
 </body>
 
 </html>

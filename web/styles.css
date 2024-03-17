@@ -255,3 +255,28 @@ main {
 #page a:hover {
     color: #ac6666; /* 鼠标悬停时改变链接文字颜色 */
 }
+
+#back-to-top-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #49b1f5;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    z-index: 9999; /* 确保按钮位于其他内容之上 */
+}
+
+#back-to-top-btn:hover {
+    background-color: #357ebd;
+}
+
+@media screen and (min-width: 768px) {
+    #back-to-top-btn {
+        display: none;
+    }
+}
+
