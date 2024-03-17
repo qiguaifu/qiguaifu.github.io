@@ -246,7 +246,7 @@ main {
 }
 
 #page a {
-    color: #007bff; /* 设置链接文字颜色为蓝色 */
+    color: #32465b; /* 设置链接文字颜色为蓝色 */
     text-decoration: none; /* 去除链接下划线 */
     font-weight: bold; /* 设置文字加粗 */
     transition: color 0.3s ease; /* 添加颜色渐变过渡效果 */
