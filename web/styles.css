@@ -273,10 +273,3 @@ main {
 #back-to-top-btn:hover {
     background-color: #357ebd;
 }
-
-@media screen and (min-width: 768px) {
-    #back-to-top-btn {
-        display: none;
-    }
-}
-
