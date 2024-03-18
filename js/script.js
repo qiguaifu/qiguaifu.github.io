@@ -64,7 +64,7 @@ document.addEventListener("DOMContentLoaded", function() {
         wechatLink.addEventListener("click", function(event) {
             event.preventDefault();
             imagePopup.style.display = "block";
-            popupImage.src = "images/blog.png";
+            popupImage.src = "image/blog.png";
 
             // 将所有的 <hr> 标签的 z-index 设置为较低的值
             hrElements.forEach(function(hr) {
