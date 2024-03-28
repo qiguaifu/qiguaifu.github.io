@@ -5,9 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=5">
     <title>淘气包Blog</title>
-    <link rel="shortcut icon" type="image/x-icon" href="image/p1.png">
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="shortcut icon" type="image/x-icon" href="../image/p1.png">
+    <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css">
+    <button id="back-to-top-btn"><i class="fa fa-home"></i> 主页</button>
 </head>
 
 <body>
@@ -95,38 +96,53 @@
                         </div>
                     </div>
                 </div>
+                <!-- 友情链接设置 -->
                 <article id="page">
                     <div class="article-container">
-                            <h2>小游戏</h2>
-                            <a href="https://www.liangwangan.top/game/2048">☞2048 游戏</a>
-                            <hr>
-            
-                            <h2>资源分享</h2>
-                            <a href="https://caiyun.139.com/m/i?055CuG5WsK9hY">☞点击进入云盘</a>
-                            <hr>
-
-                            <h2>敬请期待</h2>
-                            <div class="tool">
-                            </div>
-            
-                            <hr>
-                            <h2>敬请期待</h2>
-                            <div class="tool">
-                            </div>
+                        <h1 style="text-align: center;">友情链接</h1>
+                        <div style="background-color: #f9f9f9; padding: 20px; border-radius: 10px;">
+                            <p style="font-size: 16px; color: #333; text-align: justify;">
+                                本站提供的链接指向外部网站，本站对这些外部链接的内容及安全性不负责任。
+                            </p>
+                            <ul style="list-style-type: none; padding-left: 0; display: flex; flex-wrap: wrap; justify-content: space-between;">
+                                <li style="width: 48%; margin-bottom: 10px;">
+                                    <a href="#" style="display: block; text-decoration: none; color: #007bff; text-align: center;">xxx的个人主页</a>
+                                </li>
+                                <li style="width: 48%; margin-bottom: 10px;">
+                                    <a href="#" style="display: block; text-decoration: none; color: #007bff; text-align: center;">xxx的个人主页</a>
+                                </li>
+                                <li style="width: 48%; margin-bottom: 10px;">
+                                    <a href="#" style="display: block; text-decoration: none; color: #007bff; text-align: center;">xxx的个人主页</a>
+                                </li>
+                                <li style="width: 48%; margin-bottom: 10px;">
+                                    <a href="#" style="display: block; text-decoration: none; color: #007bff; text-align: center;">xxx的个人主页</a>
+                                </li>
+                                <li style="width: 48%; margin-bottom: 10px;">
+                                    <a href="#" style="display: block; text-decoration: none; color: #007bff; text-align: center;">xxx的个人主页</a>
+                                </li>
+                                <li style="width: 48%; margin-bottom: 10px;">
+                                    <a href="#" style="display: block; text-decoration: none; color: #007bff; text-align: center;">xxx的个人主页</a>
+                                </li>
+                            </ul>
                         </div>
-                </article>
+                    </div>
+                </article>                                                
             </div>
         </main>
         <footer id="footer">
             <div id="footer-wrap">
                 &copy; 2024 爱数数的淘气包 版权所有
                 <p id="icp"><a href="https://beian.miit.gov.cn/" target="_blank">粤ICP备2024193188号-1</a></p>
-                <p><a href="web/gybz/index.html">关于本站</a> | <a href="web/yqlj/index.html">友情链接</a></p>
+                <p><a href="../gybz/index.html">关于本站</a> | <a href="index.html">友情链接</a></p>
             </div>
         </footer>            
     <script src="https://cdn.jsdelivr.net/gh/TRHX/CDN-for-itrhx.com@3.0.8/js/maodian.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
-    <script src="js/script.js"></script>
+    <script src="../../js/script.js"></script>
+    <script>document.getElementById("back-to-top-btn").addEventListener("click", function() {
+        window.location.href = "../../index.html";
+    });
+    </script>
 </body>
 
 </html>
